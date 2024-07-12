@@ -1,0 +1,18 @@
+const axios = require("axios");
+
+const token =
+	"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjZkZDJkYTk0MDU5ZGRiODMxYzlmMzg3MTlhOTNhNDlmZWJiMjcwMmU0MWIxMWJiYzcxNzc5MjllOWRmZTVhY2E0NTUwYzhjODFlY2NmZjUyIn0.eyJhdWQiOiI2MmNiYmQyMC0yM2ZhLTRkNTctODE3My0zNmRlNDFlMTYwMzEiLCJqdGkiOiI2ZGQyZGE5NDA1OWRkYjgzMWM5ZjM4NzE5YTkzYTQ5ZmViYjI3MDJlNDFiMTFiYmM3MTc3OTI5ZTlkZmU1YWNhNDU1MGM4YzgxZWNjZmY1MiIsImlhdCI6MTcyMDc3Nzk1NywibmJmIjoxNzIwNzc3OTU3LCJleHAiOjE3MjIzODQwMDAsInN1YiI6IjExMjY1MTQ2IiwiZ3JhbnRfdHlwZSI6IiIsImFjY291bnRfaWQiOjMxODQ0ODgyLCJiYXNlX2RvbWFpbiI6ImFtb2NybS5ydSIsInZlcnNpb24iOjIsInNjb3BlcyI6WyJjcm0iLCJmaWxlcyIsImZpbGVzX2RlbGV0ZSIsIm5vdGlmaWNhdGlvbnMiLCJwdXNoX25vdGlmaWNhdGlvbnMiXSwiaGFzaF91dWlkIjoiYjI2OWZlMDAtZGUyMC00NGRlLTllN2YtYmU2OWVjODc2MDA5In0.jvz_IfEimDR6E0jFuSkm-5sU2jSJBSveYCuR-FmrFswTSyR8JJogExaDI4G8RTKrd_X0QLmQhaJ9pNzMhULCe4MuJ7c24K4bIuGkAEqbtCdQVwce8FAzwbWuZ2TGDYNSWYGEY-60klZOyuzo7B4OjcL2oB2BCP-OYXij9RoHKUCvF2I0QYwvkOm2wiGZj4368pbhebQYDb219GDlLq53NU2U0VeJKI881NVjos9zFOnc_XQxUyLG1-t2zk8VwXi7SBZ3ZZg9M8wiA-v8RnU7-in3Oaj-eYHIdMxbMBloJA9TBcVesb5ICP1HGp7fW5T2r8L0E9Pwo2cfkNwUillLyg";
+
+const url = "https://mashh.amocrm.ru/api/v4";
+
+const axiosInstance = axios.create({
+	baseURL: url,
+	headers: {
+		"content-type": "application/json",
+		accept: "application/json",
+		Authorization: "Bearer " + token,
+	},
+	credentials: true,
+});
+
+module.exports = { _http: axiosInstance };

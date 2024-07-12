@@ -1,0 +1,86 @@
+$border: 1px solid #dad1d1ed;
+$background: rgba(232, 232, 232, 0.285);
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 20px;
+	background-color: #fff;
+	border-radius: 10px;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 20px;
+	padding: 20px;
+	border-bottom: $border;
+}
+
+.heading {
+	font-size: 18px;
+}
+
+.search {
+	padding: 6px 12px;
+	border: $border;
+	border-radius: 10px;
+
+	input {
+		border: none;
+		outline: none;
+
+		&::placeholder {
+			color: #dad1d1ed;
+		}
+	}
+}
+
+.content {
+	padding: 20px;
+}
+
+.sales {
+	overflow-x: auto;
+	scrollbar-width: thin;
+}
+
+.items {
+	display: grid;
+	grid-template-columns: 50px repeat(6, 18%);
+	border-bottom: $border;
+	transition: 0.5s;
+
+	&:hover {
+		background-color: $background;
+	}
+
+	div {
+		margin: 15px 10px;
+		padding-right: 20px;
+		font-size: 14px;
+
+		span {
+			padding: 5px 8px;
+			border-radius: 5px;
+			font-size: 13px;
+			opacity: 0.8;
+		}
+	}
+}
+
+.titles {
+	@extend .items;
+	background-color: $background;
+
+	div {
+		border-right: 1px solid rgb(225, 214, 214);
+	}
+
+	& > div:first-child,
+	& > div:last-child {
+		border-right: none;
+	}
+}
